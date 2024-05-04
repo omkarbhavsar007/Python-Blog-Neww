@@ -1,0 +1,40 @@
+{% include "admin/navbar.html" %}
+
+<form action="/admin/save_about_us/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container-fluid p-5 bg-white shadow border">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>About Our Company</h3>
+            </div>
+            <div class="col-md-4 mt-4">
+                About Us - Heading
+                <input type="text" name="heading" value="{{about_info.heading}}" class="form-control" placeholder="Enter Your Heading">
+            </div>
+
+            <div class="col-md-2 mt-4">
+                Image 1
+                <input type="file" name="image1" class="form-control">
+            </div>
+            <div class="col-md-2">
+                <img src="/{{about_info.image1}}" width="100%">
+            </div>
+            <div class="col-md-2 mt-4">
+                Image 2
+                <input type="file" name="image2" class="form-control">
+            </div>
+            <div class="col-md-2">
+                <img src="/{{about_info.image2}}" width="100%">
+            </div>
+            <div class="col-md-12 mt-4">
+                About Us - Details
+                <textarea name="details" class="form-control" placeholder="Enter Your Details">{{about_info.heading}}</textarea>
+            </div>
+
+            <div class="col-md-12 mt-4 text-center">
+                <button class="btn btn-primary">Save About Us</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% include "admin/footer.html" %}

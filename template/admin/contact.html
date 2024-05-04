@@ -1,0 +1,37 @@
+{% include "admin/navbar.html" %}
+<div class="body flex-grow-1 px-3" style="margin: 35px 50px 0 50px;">
+    <div class="container-fluid p-5 bg-white" style="border-radius: 18px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>All Contact Feedbacks</h3>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-sm table-bordered">
+                    <tr>
+                        <th>Del</th>
+                        <th>SN</th>
+                        <th>Feedback</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                    </tr>
+                    {% for i in contact_info %}
+                    <tr>
+                        <td width="5%" style="white-space: nowrap;">
+                            <a href="/admin/del_contact_feedback?id={{i.id}}">
+                                <button class="btn btn-primary p-1 ps-2 pe-2 text-white"><i class="fa fa-trash"></i></button>
+                            </a> 
+                        </td>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.contact_feedback}}</td>
+                        <td>{{i.contact_name}}</td>
+                        <td>{{i.contact_email}}</td>
+                        <td>{{i.contact_subject}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "admin/footer.html" %}

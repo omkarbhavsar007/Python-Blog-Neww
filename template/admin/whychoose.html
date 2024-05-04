@@ -1,0 +1,41 @@
+{% include "admin/navbar.html" %}
+<form action="/admin/save_whychoose/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container-fluid bg-white p-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Add New WhyChoose</h2>
+            </div>
+            <div class="col-md-3">
+                WhyChoose Image
+                <input type="file" name="why_choose_image" value="{{choose_info.why_choose_image}}" class="form-control">
+            </div>
+            <div class="col-md-2">
+                <img src="/{{choose_info.why_choose_image}}" width="100%">
+            </div>
+            <div class="col-md-3">
+                WhyChoose Since
+                <input type="text" name="why_choose_since" value="{{choose_info.why_choose_since}}" class="form-control">
+            </div>
+            <div class="col-md-3">
+                WhyChoose Title
+                <input type="text" name="why_choose_title" value="{{choose_info.why_choose_title}}" class="form-control">
+            </div>
+            <div class="col-md-6">
+                WhyChoose Details
+                <textarea name="why_choose_details" class="form-control">{{choose_info.why_choose_details}}</textarea>
+            </div>
+            <div class="col-md-3">
+                WhyChoose Selector
+                <input type="text" name="why_choose_selector1" value="{{choose_info.why_choose_selector1}}" class="form-control">
+                <input type="text" name="why_choose_selector2" value="{{choose_info.why_choose_selector2}}" class="form-control">
+                <input type="text" name="why_choose_selector3" value="{{choose_info.why_choose_selector3}}" class="form-control">
+                <input type="text" name="why_choose_selector4" value="{{choose_info.why_choose_selector4}}" class="form-control">
+            </div>
+            <div class="col-md-12 mt-3 mb-4" style="margin-left: 200px;">
+                <button class="btn btn-primary">Save WhyChoose</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% include "admin/footer.html" %}

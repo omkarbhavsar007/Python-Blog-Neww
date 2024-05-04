@@ -1,0 +1,88 @@
+{% include "user/navbar.html" %}
+
+
+
+<div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
+    <div class="container">
+    <div class="row">
+    <div class="col-xl-12">
+    <div class="hero-cap text-center pt-50">
+    <h2>Contact Us</h2>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <section class="contact-section">
+    <div class="container">
+    <div class="d-none d-sm-block mb-5 pb-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.26817396561!2d73.72107817969032!3d19.991105340959415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddd290b09914b3%3A0xcb07845d9d28215c!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707397034696!5m2!1sen!2sin" width="1200" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+    </div>
+    <div class="row">
+    <div class="col-12">
+    <h2 class="contact-title">Get in Touch</h2>
+    </div>
+    <div class="col-lg-8">
+    <form class="form-contact contact_form" action="/save_contact/" method="post" novalidate="novalidate">
+        <input type="hidden" name="id" value="{{contact_info.id}}">
+        {% csrf_token %}
+        <div class="row">
+        <div class="col-12">
+        <div class="form-group">
+        <textarea class="form-control w-100" name="contact_feedback" value="{{contact_info.contact_feedback}}" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+        </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+        <input class="form-control valid" name="contact_name" value="{{contact_info.contact_name}}" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+        </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+        <input class="form-control valid" name="contact_email" value="{{contact_info.contact_email}}" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+        </div>
+        </div>
+        <div class="col-12">
+        <div class="form-group">
+        <input class="form-control" name="contact_subject" value="{{contact_info.contact_subject}}" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+        </div>
+        </div>
+        </div>
+        <div class="form-group mt-3">
+        <button class="button button-contactForm boxed-btn">Send</button>
+        </div>
+        </form>
+    </div>
+    <div class="col-lg-3 offset-lg-1">
+    <div class="media contact-info">
+    <span class="contact-info__icon"><i class="ti-home"></i></span>
+    <div class="media-body">
+    <h3>Buttonwood, California.</h3>
+    <p>Rosemead, CA 91770</p>
+    </div>
+    </div>
+    <div class="media contact-info">
+    <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+    <div class="media-body">
+    <h3>+1 253 565 2365</h3>
+    <p>Mon to Fri 9am to 6pm</p>
+    </div>
+    </div>
+    <div class="media contact-info">
+    <span class="contact-info__icon"><i class="ti-email"></i></span>
+    <div class="media-body">
+    <h3><a href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5b6b0b5b5aab7b185a6aaa9aab7a9aca7eba6aaa8">[email&#160;protected]</a></h3>
+    <p>Send us your query anytime!</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+    
+
+{% include "user/footer.html" %}

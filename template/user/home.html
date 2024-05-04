@@ -1,0 +1,411 @@
+{% include "user/navbar.html" %}
+<div class="slider-area slider-height" data-background="/static/assets/img/hero/h1_hero.jpg">
+<div class="slider-active">
+
+{% for i in slides %}
+<div class="single-slider">
+<div class="slider-cap-wrapper">
+<div class="hero__caption">
+<p data-animation="fadeInLeft" data-delay=".2s">{{ i.slider_title }}</p>
+<h1 data-animation="fadeInLeft" data-delay=".5s">{{ i.slider_heading }}</h1>
+<a href="{{i.slider_button_link}}" class="btn hero-btn" data-animation="fadeInLeft" data-delay=".8s">{{i.slider_button_heading}}</a>
+{{i.slider_image}}
+</div>
+<div class="hero__img">
+<img src="/{{i.slider_image}}" alt>
+</div>
+</div>
+</div>
+{% endfor %}
+<div class="single-slider">
+    <div class="slider-cap-wrapper">
+    <div class="hero__caption">
+    <p data-animation="fadeInLeft" data-delay=".2s">Achieve your financial goal</p>
+    <h1 data-animation="fadeInLeft" data-delay=".5s">Small Business Loans For Daily Expenses.</h1>
+
+    <a href="apply.html" class="btn hero-btn" data-animation="fadeInLeft" data-delay=".8s">Apply for Loan</a>
+    </div>
+    <div class="hero__img">
+    <img src="/static/assets/img/hero/hero_img2.jpg" alt>
+    </div>
+    </div>
+</div>
+</div>
+<div class="slider-footer section-bg d-none d-sm-block">
+<div class="footer-wrapper">
+<div class="single-caption">
+<div class="single-img">
+<img src="/static/assets/img/hero/hero_footer.png" alt>
+</div>
+</div>
+<div class="single-caption">
+<div class="caption-icon">
+<span class="flaticon-clock"></span>
+</div>
+<div class="caption">
+<p>Quick & Easy Loan</p>
+<p>Approvals</p>
+</div>
+</div>
+<div class="single-caption">
+<div class="caption-icon">
+<span class="flaticon-like"></span>
+</div>
+<div class="caption">
+<p>Quick & Easy Loan</p>
+<p>Approvals</p>
+</div>
+</div>
+<div class="single-caption">
+<div class="caption-icon">
+<span class="flaticon-money"></span>
+</div>
+<div class="caption">
+<p>Quick & Easy Loan</p>
+<p>Approvals</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="about-low-area section-padding2">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-12">
+<div class="about-caption mb-50">
+<div class="section-tittle mb-35">
+<span>About Our Company</span>
+<h2>{{about_us.heading}}</h2>
+</div>
+<p>{{about_us.details}}</p>
+<a href="/about" class="btn">More Details</a>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+<div class="about-img ">
+<div class="about-font-img d-none d-lg-block">
+<img src="/{{about_us.image1}}" alt>
+</div>
+<div class="about-back-img ">
+<img src="/{{about_us.image2}}" alt>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="services-area pt-150 pb-150" data-background="/static/assets/img/gallery/section_bg02.jpg">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-6 col-md-10">
+<div class="section-tittle text-center mb-80">
+<span>Services that we are providing</span>
+<h2>High Performance Services For All Industries.</h2>
+</div>
+</div>
+</div>
+<div class="row">
+{% for i in services %}
+    {% if forloop.counter < 5 %}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="single-cat text-center mb-50">
+        <div class="cat-icon">
+            <img src="/{{i.service_image}}" width="70px">
+        </div>
+        <div class="cat-cap">
+        <h5><a href="services.html">{{i.service_title}}</a></h5>
+        <p>
+            {{i.service_details}}
+        </p>
+        </div>
+        </div>
+        </div>
+    {% endif %}
+{% endfor %}
+</div>
+</div>
+</div>
+
+<div class="support-company-area section-padding3 fix">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="support-location-img mb-50">
+<img src="/{{choose_info.why_choose_image}}" alt>
+<div class="support-img-cap">
+<span>{{choose_info.why_choose_since}}</span>
+</div>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6">
+<div class="right-caption">
+
+<div class="section-tittle">
+<span>Why Choose Our Company</span>
+<h2>{{choose_info.why_choose_title}}</h2>
+</div>
+<div class="support-caption">
+<p>{{choose_info.why_choose_details}}</p>
+<div class="select-suport-items">
+<label class="single-items">{{choose_info.why_choose_selector1}}
+<input type="checkbox" checked="checked active">
+<span class="checkmark"></span>
+</label>
+<label class="single-items">{{choose_info.why_choose_selector2}}
+<input type="checkbox" checked="checked active">
+<span class="checkmark"></span>
+</label>
+<label class="single-items">{{choose_info.why_choose_selector3}}
+<input type="checkbox" checked="checked active">
+<span class="checkmark"></span>
+</label>
+<label class="single-items">{{choose_info.why_choose_selector4}}
+<input type="checkbox" checked="checked active">
+<span class="checkmark"></span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="application-area pt-150 pb-140" data-background="/static/assets/img/gallery/section_bg03.jpg">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-6 col-md-10">
+
+<div class="section-tittle section-tittle2 text-center mb-45">
+<span>Apply in Three Easy Steps</span>
+<h2>Easy Application Process For Any Types of Loan</h2>
+</div>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-9 col-xl-8">
+
+<form action="#" class="search-box">
+<div class="select-form">
+<div class="select-itms">
+<select name="select" id="select1">
+<option value>Select Amount</option>
+<option value>$120</option>
+<option value>$700</option>
+<option value>$750</option>
+<option value>$250</option>
+</select>
+</div>
+</div>
+<div class="select-form">
+<div class="select-itms">
+<select name="select" id="select1">
+<option value>Duration Month</option>
+<option value>7 Days</option>
+<option value>10 Days</option>
+<option value>14 Days Days</option>
+<option value>20 Days</option>
+</select>
+</div>
+</div>
+<div class="input-form">
+<input type="text" placeholder="Return Amount">
+</div>
+<div class="search-form">
+<a href="apply.html">Apply for Loan</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="team-area section-padding30">
+<div class="container">
+<div class="row justify-content-center">
+<div class="cl-xl-7 col-lg-8 col-md-10">
+
+<div class="section-tittle text-center mb-70">
+<span>Our Loan Section Team Mambers</span>
+<h2>{{team_info.teammambers_heading}}</h2>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="single-team mb-30">
+<div class="team-img">
+<img src="/{{team_info.teammambers_image1}}" alt>
+
+<div class="team-social">
+<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/ananya_akshay/"><i class="fa fa-instagram"></i></a></li>
+</div>
+</div>
+<div class="team-caption">
+<h3><a href="#">{{team_info.teammambers_name1}}</a></h3>
+<p>{{team_info.teammambers_details1}}</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="single-team mb-30">
+<div class="team-img">
+<img src="/{{team_info.teammambers_image2}}" alt>
+
+<div class="team-social">
+<li><a href="https://www.fb.com/profile.php?id=100073324331940"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/omkarbhavsar007/"><i class="fa fa-instagram"></i></a></li>
+</div>
+</div>
+<div class="team-caption">
+<h3><a href="#">{{team_info.teammambers_name2}}</a></h3>
+<p>{{team_info.teammambers_details2}}</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="single-team mb-30">
+<div class="team-img">
+<img src="/{{team_info.teammambers_image3}}" alt>
+
+<div class="team-social">
+<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/ananya_akshay/"><i class="fa fa-instagram"></i></a></li>
+</div>
+</div>
+<div class="team-caption">
+<h3><a href="#">{{team_info.teammambers_name3}}</a></h3>
+<p>{{team_info.teammambers_details3}}</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="single-team mb-30">
+<div class="team-img">
+<img src="/{{team_info.teammambers_image4}}" alt>
+
+<div class="team-social">
+<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://www.instagram.com/son_of_patange/"><i class="fa fa-instagram"></i></a></li>
+</div>
+</div>
+<div class="team-caption">
+<h3><a href="#">{{team_info.teammambers_name4}}</a></h3>
+<p>{{team_info.teammambers_details4}}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="testimonial-area t-bg testimonial-padding">
+<div class="container ">
+<div class="row d-flex justify-content-center">
+<div class="col-xl-11 col-lg-11 col-md-9">
+<div class="h1-testimonial-active">
+
+<div class="single-testimonial text-center">
+
+<div class="testimonial-caption ">
+<div class="testimonial-top-cap">
+<img src="/static/assets/img/gallery/testimonial.png" alt>
+<p>{{logistic_info.logistics_heading1}}</p>
+</div>
+
+<div class="testimonial-founder d-flex align-items-center justify-content-center">
+<div class="founder-img">
+<img src="/{{logistic_info.logistics_image1}}" alt>
+</div>
+<div class="founder-text">
+<span>{{logistic_info.logistics_name1}}</span>
+<p>{{logistic_info.logistics_founder1}}</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="single-testimonial text-center">
+
+<div class="testimonial-caption ">
+<div class="testimonial-top-cap">
+<img src="/static/assets/img/gallery/testimonial.png" alt>
+<p>{{logistic_info.logistics_heading2}}</p>
+</div>
+
+<div class="testimonial-founder d-flex align-items-center justify-content-center">
+<div class="founder-img">
+<img src="/{{logistic_info.logistics_image2}}" alt>
+</div>
+<div class="founder-text">
+<span>{{logistic_info.logistics_name2}}</span>
+<p>{{logistic_info.logistics_founder2}}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="home-blog-area section-padding30">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-7 col-md-10">
+
+<div class="section-tittle text-center mb-70">
+<span>News form our latest blog</span>
+<h2>{{news_info.news_from_heading}}</h2>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+
+<div class="single-blogs mb-30">
+<div class="blog-images">
+<img src="/{{news_info.news_from_image1}}" alt>
+</div>
+<div class="blog-captions">
+<span>{{news_info.news_from_date1}}</span>
+<h2><a href="blog_details.html">The advent of pesticides brought
+in its benefits and pitfalls.</a></h2>
+<p>{{news_info.news_from_steve1}}</p>
+</div>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+
+<div class="single-blogs mb-30">
+<div class="blog-images">
+<img src="/{{news_info.news_from_image2}}" alt>
+</div>
+<div class="blog-captions">
+<span>{{news_info.news_from_date2}}</span>
+<h2><a href="blog_details.html">The advent of pesticides brought
+in its benefits and pitfalls.</a></h2>
+<p>{{news_info.news_from_steve2}}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% include "user/footer.html" %}
+
+
+

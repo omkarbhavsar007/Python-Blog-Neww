@@ -1,0 +1,144 @@
+{% include "admin/navbar.html" %}
+<form id="edit_record_form" style="display: none;" action="/admin/update_slider/" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{edit_slider.id}}">
+    {% csrf_token %}
+    <div class="container-fluid p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Edit Slider</h3>
+            </div>
+            <div class="col-md-2 mt-4">
+                <span>Slider Image</span>
+                <input type="file" name="slider_image" class="form-control">
+            </div>
+            <div class="col-md-2 mt-4">
+                <img src="" value="{{edit_slider.slider_image}}" id="slider_image" width="100%">
+                Slider Image
+            </div>
+            <div class="col-md-4 mt-4">
+                <span>Slider Title</span>
+                <input type="text" name="slider_title" value="{{edit_slider.id}}" id="slider_title" class="form-control" placeholder="Enter Your Title">
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <span>Slider Heading</span>
+                <input type="text" name="slider_heading" value="{{edit_slider.slider_heading}}" id="slider_heading" class="form-control" placeholder="Enter Your Heading">
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <span>Slider Button Heading</span>
+                <input type="text" name="slider_button_heading" value="{{edit_slider.slider_button_heading}}" id="slider_button_heading" class="form-control" placeholder="Enter Button Name">
+            </div>
+
+            <div class="col-md-8 mt-4">
+                <span>Slider Button Link</span>
+                <input type="text" name="slider_button_link" value="{{edit_slider.slider_button_link}}" id="slider_button_link" class="form-control" placeholder="Enter Your Link">
+            </div>
+
+            <div class="col-md-12 mt-4 text-center">
+                <button class="btn btn-primary">Save Slider</button>
+            </div>
+        </div>
+    </div>
+</form>
+<form id="add_record_form" action="/admin/save_slider/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container-fluid p-5 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Add New Slide</h3>
+            </div>
+            <div class="col-md-4 mt-4">
+                <span>Slider Image</span>
+                <input type="file" name="slider_image" class="form-control">
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <span>Slider Title</span>
+                <input type="text" name="slider_title" class="form-control" placeholder="Enter Your Title">
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <span>Slider Heading</span>
+                <input type="text" name="slider_heading" class="form-control" placeholder="Enter Your Heading">
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <span>Slider Button Heading</span>
+                <input type="text" name="slider_button_heading" class="form-control" placeholder="Enter Button Name">
+            </div>
+
+            <div class="col-md-8 mt-4">
+                <span>Slider Button Link</span>
+                <input type="text" name="slider_button_link" class="form-control" placeholder="Enter Your Link">
+            </div>
+
+            <div class="col-md-12 mt-4 text-center">
+                <button class="btn btn-primary">Save Slider</button>
+            </div>
+        </div>
+    </div>
+</form>
+<br>
+<div class="container-fluid p-5 bg-white">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>All Slides</h3>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <th></th>
+                    <th>SN</th>
+                    <th>Titel</th>
+                    <th>Heading</th>
+                    <th>Button Link</th>
+                    <th>Button Text</th>
+                    <th>Image</th>
+                </tr>
+                {% for i in slides %}
+                <tr>
+                    <td width="5%" style="white-space: nowrap;">
+                        <button class="btn btn-danger p-1 ps-2 pe-2 text-white" onclick="edit_slider(`{{i.slider_title}}`,`{{i.slider_heading}}`,`{{i.slider_button_heading}}`,`{{i.slider_button_link}}`,`{{i.slider_image}}`)"><i class="fa fa-pencil"></i></button>
+                        <a href="/admin/delete_slider?id={{i.id}}">
+                            <button class="btn btn-primary p-1 ps-2 pe-2 text-white"><i class="fa fa-trash"></i></button>
+                        </a> 
+                    </td>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.slider_title}}</td>
+                    <td>{{i.slider_heading}}</td>
+                    <td>{{i.slider_button_link}}</td>
+                    <td>{{i.slider_button_heading}}</td>
+                    <td>
+                        <img src="/{{i.slider_image}}" width="100px">
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% include "admin/footer.html" %}
+
+<script>
+    function edit_slider(title,heading,button_heading,button_link,image)
+    {
+        document.getElementById("edit_record_form").style.display = 'block';
+        document.getElementById("add_record_form").style.display = 'none';
+        document.getElementById("slider_title").value = title;
+        document.getElementById("slider_heading").value = heading;
+        document.getElementById("slider_button_heading").value = button_heading;
+        document.getElementById("slider_button_link").value = button_link;
+        document.getElementById("slider_image").src = "/"+image;
+    }
+</script>
+
+
+<!-- slider
+        slider_image
+        slider_title
+        slider_heading
+        slider_button_heading
+        slider_button_link
+
+-->
